@@ -11,18 +11,19 @@ import edu.app.persistence.Admin;
 @Singleton
 @Startup
 public class ConfigBean {
-	
+
 	@EJB
 	private AuthenticationLocal authentication;
 
-    public ConfigBean() {
-    }
-    
-    @PostConstruct
-    public void createData(){
-    	if (!authentication.loginExists("admin")) {
-    		authentication.createUser(new Admin("admin", "admin", "company.esprit@gmail.com", 10));
+	public ConfigBean() {
+	}
+
+	@PostConstruct
+	public void createData() {
+		if (!authentication.loginExists("admin")) {
+			authentication.createUser(new Admin("admin", "admin",
+					"company.esprit@gmail.com", 10));
 		}
-    }
+	}
 
 }

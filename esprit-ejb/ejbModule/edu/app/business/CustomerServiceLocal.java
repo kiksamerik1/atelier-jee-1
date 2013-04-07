@@ -6,7 +6,7 @@ import edu.app.persistence.Customer;
 
 @Local
 public interface CustomerServiceLocal {
-	
+
 	void saveOrUpdate(Customer customer);
 
 }

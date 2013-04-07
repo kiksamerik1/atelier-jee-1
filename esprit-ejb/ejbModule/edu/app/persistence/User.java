@@ -11,15 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_user")
-public class User implements Serializable{
-	
+public class User implements Serializable {
+
 	private static final long serialVersionUID = -1014505330615266768L;
-	
+
 	private int id;
 	private String login;
 	private String password;
 	private String email;
-	
+
 	public User() {
 	}
 
@@ -63,7 +63,5 @@ public class User implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
 }

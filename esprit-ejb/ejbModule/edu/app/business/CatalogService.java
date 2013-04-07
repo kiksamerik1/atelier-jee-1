@@ -10,13 +10,14 @@ import edu.app.persistence.Category;
 import edu.app.persistence.Product;
 
 @Stateless
-public class CatalogService implements CatalogServiceRemote, CatalogServiceLocal {
-	
+public class CatalogService implements CatalogServiceRemote,
+		CatalogServiceLocal {
+
 	@PersistenceContext
 	private EntityManager em;
 
-    public CatalogService() {
-    }
+	public CatalogService() {
+	}
 
 	public void createProduct(Product product) {
 		em.persist(product);
@@ -39,7 +40,8 @@ public class CatalogService implements CatalogServiceRemote, CatalogServiceLocal
 	}
 
 	public List<Product> findProductsByCategory(Category category) {
-		return em.createQuery("select p from Product p where p.category=:c").setParameter("c", category).getResultList();
+		return em.createQuery("select p from Product p where p.category=:c")
+				.setParameter("c", category).getResultList();
 	}
 
 	public void createCategory(Category category) {
